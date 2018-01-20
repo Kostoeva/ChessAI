@@ -3,12 +3,15 @@ package com.chess.engine.pieces;
 import com.chess.engine.Alliance;
 import com.chess.engine.board.Board;
 import com.chess.engine.board.BoardUtils;
+import static com.chess.engine.board.Move.*;
+
 import com.chess.engine.board.Move;
 import com.chess.engine.board.Tile;
 import com.google.common.collect.ImmutableList;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Collection;
 
 public class Knight extends Piece {
 
@@ -21,11 +24,10 @@ public class Knight extends Piece {
     @Override
     public Collection<Move> calculateLegalMoves(Board board) {
 
-        int candidateDestinationCoordinate;
         List<Move> legalMoves = new ArrayList<>();
 
         for (final int currentCandidate : CANDIDATE_MOVE_COORDINATES) {
-            candidateDestinationCoordinate = this.piecePosition + currentCandidate;
+            final int candidateDestinationCoordinate = this.piecePosition + currentCandidate;
             if (BoardUtils.isValidTileCoordinate(candidateDestinationCoordinate)) {
                 if (isFirstColumnExclusion(this.piecePosition, currentCandidate) ||
                         isSecondColumnExclusion(this.piecePosition, currentCandidate) ||
@@ -38,14 +40,14 @@ public class Knight extends Piece {
                         board.getTile(candidateDestinationCoordinate);
 
                 if (!candidateDestinationTile.isTileOccupied()) {
-                    legalMoves.add(new Move());
+                    legalMoves.add(new MajorMove(board, this, candidateDestinationCoordinate));
                 } else {
                     final Piece pieceAtDestination = candidateDestinationTile.getPiece();
                     final Alliance pieceAlliance =
                             pieceAtDestination.getPieceAlliance();
 
                     if (this.pieceAlliance != pieceAlliance) {
-                        legalMoves.add(new Move());
+                        legalMoves.add(new AttackMove(board, this, candidateDestinationCoordinate, pieceAtDestination));
                     }
                 }
             }
