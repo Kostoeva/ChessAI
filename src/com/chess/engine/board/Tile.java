@@ -45,7 +45,7 @@ public abstract class Tile {
      */
     public static final class EmptyTile extends Tile{
 
-        EmptyTile(final int coordinate) {
+        private EmptyTile(final int coordinate) {
             super(coordinate);
         }
 
@@ -67,7 +67,7 @@ public abstract class Tile {
         //private = cannot reference w/o calling getPiece()
         private final Piece pieceOnTile;
 
-        OccupiedTile(int coordinate, Piece pieceOnTile) {
+        private OccupiedTile(int coordinate, Piece pieceOnTile) {
             super(coordinate);
             this.pieceOnTile = pieceOnTile;
         }
