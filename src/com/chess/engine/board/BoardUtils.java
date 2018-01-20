@@ -24,7 +24,7 @@ public class BoardUtils {
         return column;
     }
 
-    public static boolean isValidTileCoordinate(int coordinate) {
+    public static boolean isValidTileCoordinate(final int coordinate) {
         return coordinate >= 0 && coordinate < NUM_TILES;
     }
 
