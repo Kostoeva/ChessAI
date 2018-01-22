@@ -52,9 +52,8 @@ public class Knight extends Piece {
                     }
                 }
             }
-            return ImmutableList.copyOf(legalMoves);
         }
-        return null;
+        return ImmutableList.copyOf(legalMoves);
     }
 
     private static boolean isFirstColumnExclusion(final int currentPos, final int candidatePos) {
