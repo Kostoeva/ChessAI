@@ -29,6 +29,7 @@ public class Knight extends Piece {
         for (final int currentCandidate : CANDIDATE_MOVE_COORDINATES) {
             final int candidateDestinationCoordinate = this.piecePosition + currentCandidate;
             if (BoardUtils.isValidTileCoordinate(candidateDestinationCoordinate)) {
+                //Edge cases
                 if (isFirstColumnExclusion(this.piecePosition, currentCandidate) ||
                         isSecondColumnExclusion(this.piecePosition, currentCandidate) ||
                         isSeventhColumnExclusion(this.piecePosition, currentCandidate) ||
