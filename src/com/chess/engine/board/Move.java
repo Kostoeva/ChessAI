@@ -15,19 +15,33 @@ public abstract class Move {
         this.destinationCoordinate = destinationCoordinate;
     }
 
-    public static final class MajorMove extends Move {
+    public abstract Board execute();
 
+    public static final class MajorMove extends Move {
         public MajorMove(Board board, Piece movedPiece, int destinationCoordinate) {
             super(board, movedPiece, destinationCoordinate);
+        }
+
+        @Override
+        public Board execute() {
+            return null;
         }
     }
 
     public static final class AttackMove extends Move {
         final Piece attackedPiece;
-
         public AttackMove(Board board, Piece movedPiece, int destinationCoordinate, final Piece attackedPiece) {
             super(board, movedPiece, destinationCoordinate);
             this.attackedPiece = attackedPiece;
         }
+
+        @Override
+        public Board execute() {
+            return null;
+        }
+    }
+
+    public int getDestinationCoordinate() {
+        return this.destinationCoordinate;
     }
 }
