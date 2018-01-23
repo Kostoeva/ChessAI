@@ -56,6 +56,11 @@ public class Knight extends Piece {
         return ImmutableList.copyOf(legalMoves);
     }
 
+    @Override
+    public String toString() {
+        return PieceType.KNIGHT.toString();
+    }
+
     private static boolean isFirstColumnExclusion(final int currentPos, final int candidatePos) {
         return BoardUtils.FIRST_COLUMN[currentPos] &&
                 ((candidatePos == -17) ||

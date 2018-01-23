@@ -56,6 +56,11 @@ public class Rook extends Piece {
         return ImmutableList.copyOf(legalMoves);
     }
 
+    @Override
+    public String toString() {
+        return PieceType.ROOK.toString();
+    }
+
     private static boolean isFirstColumnExclusion(final int currentPos, final int destPos) {
         return BoardUtils.FIRST_COLUMN[currentPos] && (destPos == -1);
     }
