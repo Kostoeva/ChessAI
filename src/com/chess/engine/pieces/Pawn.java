@@ -33,9 +33,9 @@ public class Pawn extends Piece {
                 if(destPos == 8 && board.getTile(destCoordinate).isTileOccupied()) {
                     legalMoves.add(new Move.MajorMove(board, this, destCoordinate));
                 } else if (destPos == 16 && this.isFirstMove() &&
-                        (BoardUtils.SECOND_ROW[this.piecePosition] &&
+                        (BoardUtils.SEVENTH_RANK[this.piecePosition] &&
                                 this.getPieceAlliance().isBlack())
-                        || (BoardUtils.SEVENTH_ROW[this.piecePosition] &&
+                        || (BoardUtils.SECOND_RANK[this.piecePosition] &&
                                 this.getPieceAlliance().isWhite())) {
                     final int behindDestCoordinate = this.piecePosition + (this.pieceAlliance.getDirection() * 8);
                     if (!board.getTile(behindDestCoordinate).isTileOccupied() && (!board.getTile(destCoordinate).isTileOccupied())) {
@@ -73,6 +73,6 @@ public class Pawn extends Piece {
 
     @Override
     public String toString() {
-        return PieceType.PAWN.toString();
+        return this.pieceType.toString();
     }
 }

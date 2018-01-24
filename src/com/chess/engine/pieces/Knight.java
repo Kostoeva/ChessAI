@@ -63,7 +63,7 @@ public class Knight extends Piece {
 
     @Override
     public String toString() {
-        return PieceType.KNIGHT.toString();
+        return this.pieceType.toString();
     }
 
     private static boolean isFirstColumnExclusion(final int currentPos, final int candidatePos) {

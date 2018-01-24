@@ -63,7 +63,7 @@ public class Bishop extends Piece {
 
     @Override
     public String toString() {
-        return PieceType.BISHOP.toString();
+        return this.pieceType.toString();
     }
 
     private static boolean isFirstColumnExclusion(final int currentPos, final int destPos) {

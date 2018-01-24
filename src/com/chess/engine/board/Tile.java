@@ -79,7 +79,7 @@ public abstract class Tile {
             super(coordinate);
             this.pieceOnTile = pieceOnTile;
         }
-        
+
         //black pieces are lower numberwise
         @Override
         public String toString() {

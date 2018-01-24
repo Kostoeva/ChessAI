@@ -63,7 +63,7 @@ public class Rook extends Piece {
 
     @Override
     public String toString() {
-        return PieceType.ROOK.toString();
+        return this.pieceType.toString();
     }
 
     private static boolean isFirstColumnExclusion(final int currentPos, final int destPos) {
