@@ -79,12 +79,13 @@ public abstract class Tile {
             super(coordinate);
             this.pieceOnTile = pieceOnTile;
         }
-
+        
+        //black pieces are lower numberwise
         @Override
-        //black pieces are lower
         public String toString() {
-            return getPiece().getPieceAlliance().isBlack() ? toString().toLowerCase() :
-                    getPiece().toString();
+            return this.pieceOnTile.getPieceAlliance().isWhite() ?
+                    this.pieceOnTile.toString() :
+                    this.pieceOnTile.toString().toLowerCase();
         }
 
         @Override
