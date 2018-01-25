@@ -50,11 +50,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="GameHistoryPanel.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="GameHistoryPanel.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/../Chess/src/com/chess/gui/GameHistoryPanel.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="196">
-              <caret line="43" column="19" lean-forward="false" selection-start-line="43" selection-start-column="19" selection-end-line="43" selection-end-column="19" />
+            <state relative-caret-position="264">
+              <caret line="47" column="15" lean-forward="false" selection-start-line="47" selection-start-column="15" selection-end-line="47" selection-end-column="15" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#2633#2634#0" expanded="true" />
@@ -73,6 +73,23 @@
                 <element signature="e#4733#4734#0" expanded="true" />
                 <element signature="e#4788#4789#0" expanded="true" />
                 <element signature="e#4833#4834#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Move.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/../Chess/src/com/chess/engine/board/Move.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="366">
+              <caret line="150" column="34" lean-forward="false" selection-start-line="150" selection-start-column="34" selection-end-line="150" selection-end-column="34" />
+              <folding>
+                <element signature="e#5476#5477#0" expanded="true" />
+                <element signature="e#5569#5570#0" expanded="true" />
+                <element signature="class#CastleMove#0;class#Move#0" expanded="false" />
+                <element signature="class#QueenSideCastleMove#0;class#Move#0" expanded="false" />
+                <element signature="class#MoveFactory#0;class#Move#0" expanded="false" />
+                <element signature="method#hashCode#0;class#Move#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -121,6 +138,7 @@
       <find>setValueAt</find>
       <find>setvalue</find>
       <find>setvalueat</find>
+      <find>if(moveLog</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -178,10 +196,10 @@
         <option value="$PROJECT_DIR$/../Chess/src/com/chess/engine/pieces/Pawn.java" />
         <option value="$PROJECT_DIR$/../Chess/src/com/chess/gui/TakenPiecesPanel.java" />
         <option value="$PROJECT_DIR$/../Chess/src/com/chess/engine/pieces/Piece.java" />
-        <option value="$PROJECT_DIR$/../Chess/src/com/chess/engine/board/Move.java" />
         <option value="$PROJECT_DIR$/../Chess/src/com/chess/engine/board/BoardUtils.java" />
         <option value="$PROJECT_DIR$/../Chess/src/com/chess/gui/Table.java" />
         <option value="$PROJECT_DIR$/../Chess/src/com/chess/gui/GameHistoryPanel.java" />
+        <option value="$PROJECT_DIR$/../Chess/src/com/chess/engine/board/Move.java" />
       </list>
     </option>
   </component>
@@ -579,33 +597,33 @@
             <element signature="e#3366#3367#0" expanded="false" />
             <element signature="e#3427#3428#0" expanded="false" />
             <element signature="e#3476#3477#0" expanded="false" />
-            <element signature="e#6186#6187#0" expanded="false" />
-            <element signature="e#6232#6233#0" expanded="false" />
-            <element signature="e#6293#6294#0" expanded="false" />
-            <element signature="e#6328#6329#0" expanded="false" />
-            <element signature="e#7932#7933#0" expanded="false" />
-            <element signature="e#7968#7969#0" expanded="false" />
-            <element signature="e#8689#8690#0" expanded="false" />
-            <element signature="e#8727#8728#0" expanded="false" />
+            <element signature="e#6334#6335#0" expanded="false" />
+            <element signature="e#6380#6381#0" expanded="false" />
+            <element signature="e#6441#6442#0" expanded="false" />
+            <element signature="e#6476#6477#0" expanded="false" />
+            <element signature="e#8080#8081#0" expanded="false" />
+            <element signature="e#8116#8117#0" expanded="false" />
+            <element signature="e#8837#8838#0" expanded="false" />
+            <element signature="e#8875#8876#0" expanded="false" />
             <element signature="class#NullMove#0;class#Move#0" expanded="false" />
-            <element signature="e#8835#8836#0" expanded="false" />
-            <element signature="e#8874#8875#0" expanded="false" />
-            <element signature="e#8926#8927#0" expanded="false" />
-            <element signature="e#8989#8990#0" expanded="false" />
-            <element signature="e#9066#9067#0" expanded="false" />
-            <element signature="e#9138#9139#0" expanded="false" />
-            <element signature="e#10507#10508#0" expanded="false" />
-            <element signature="e#10545#10546#0" expanded="false" />
-            <element signature="e#10590#10591#0" expanded="false" />
-            <element signature="e#10639#10640#0" expanded="false" />
-            <element signature="e#10680#10681#0" expanded="false" />
-            <element signature="e#10737#10738#0" expanded="false" />
-            <element signature="e#10770#10771#0" expanded="false" />
-            <element signature="e#10798#10799#0" expanded="false" />
-            <element signature="e#10837#10838#0" expanded="false" />
-            <element signature="e#10865#10866#0" expanded="false" />
-            <element signature="e#10904#10905#0" expanded="false" />
-            <element signature="e#10931#10932#0" expanded="false" />
+            <element signature="e#8983#8984#0" expanded="false" />
+            <element signature="e#9022#9023#0" expanded="false" />
+            <element signature="e#9074#9075#0" expanded="false" />
+            <element signature="e#9137#9138#0" expanded="false" />
+            <element signature="e#9214#9215#0" expanded="false" />
+            <element signature="e#9286#9287#0" expanded="false" />
+            <element signature="e#10655#10656#0" expanded="false" />
+            <element signature="e#10693#10694#0" expanded="false" />
+            <element signature="e#10738#10739#0" expanded="false" />
+            <element signature="e#10787#10788#0" expanded="false" />
+            <element signature="e#10828#10829#0" expanded="false" />
+            <element signature="e#10885#10886#0" expanded="false" />
+            <element signature="e#10918#10919#0" expanded="false" />
+            <element signature="e#10946#10947#0" expanded="false" />
+            <element signature="e#10985#10986#0" expanded="false" />
+            <element signature="e#11013#11014#0" expanded="false" />
+            <element signature="e#11052#11053#0" expanded="false" />
+            <element signature="e#11079#11080#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -863,19 +881,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../Chess/src/com/chess/engine/board/Move.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="196">
-          <caret line="61" column="121" lean-forward="false" selection-start-line="61" selection-start-column="121" selection-end-line="61" selection-end-column="121" />
-          <folding>
-            <element signature="class#CastleMove#0;class#Move#0" expanded="false" />
-            <element signature="class#QueenSideCastleMove#0;class#Move#0" expanded="false" />
-            <element signature="class#MoveFactory#0;class#Move#0" expanded="false" />
-            <element signature="method#hashCode#0;class#Move#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../Chess/src/com/chess/engine/board/BoardUtils.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1037">
@@ -974,8 +979,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/../Chess/src/com/chess/gui/GameHistoryPanel.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="196">
-          <caret line="43" column="19" lean-forward="false" selection-start-line="43" selection-start-column="19" selection-end-line="43" selection-end-column="19" />
+        <state relative-caret-position="264">
+          <caret line="47" column="15" lean-forward="false" selection-start-line="47" selection-start-column="15" selection-end-line="47" selection-end-column="15" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#2633#2634#0" expanded="true" />
@@ -994,6 +999,21 @@
             <element signature="e#4733#4734#0" expanded="true" />
             <element signature="e#4788#4789#0" expanded="true" />
             <element signature="e#4833#4834#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../Chess/src/com/chess/engine/board/Move.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="366">
+          <caret line="150" column="34" lean-forward="false" selection-start-line="150" selection-start-column="34" selection-end-line="150" selection-end-column="34" />
+          <folding>
+            <element signature="e#5476#5477#0" expanded="true" />
+            <element signature="e#5569#5570#0" expanded="true" />
+            <element signature="class#CastleMove#0;class#Move#0" expanded="false" />
+            <element signature="class#QueenSideCastleMove#0;class#Move#0" expanded="false" />
+            <element signature="class#MoveFactory#0;class#Move#0" expanded="false" />
+            <element signature="method#hashCode#0;class#Move#0" expanded="false" />
           </folding>
         </state>
       </provider>
