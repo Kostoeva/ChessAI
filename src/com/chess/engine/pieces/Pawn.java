@@ -43,7 +43,7 @@ public class Pawn extends Piece {
                                 this.getPieceAlliance().isWhite()))) {
                     final int behindDestCoordinate = this.piecePosition + (this.pieceAlliance.getDirection() * 8);
                     if (!board.getTile(behindDestCoordinate).isTileOccupied() && (!board.getTile(destCoordinate).isTileOccupied())) {
-                        legalMoves.add(new Move.MajorMove(board, this, destCoordinate));
+                        legalMoves.add(new Move.PawnJump(board, this, destCoordinate));
                     }
                     //edge cases
                 } else if(destPos == 7 &&
@@ -52,7 +52,7 @@ public class Pawn extends Piece {
                     if(board.getTile(destCoordinate).isTileOccupied()) {
                         final Piece pieceOnDest = board.getTile(destCoordinate).getPiece();
                         if(this.pieceAlliance != pieceOnDest.getPieceAlliance()) {
-                            legalMoves.add(new Move.MajorMove(board, this, destCoordinate));
+                            legalMoves.add(new Move.PawnAttackMove(board, this, destCoordinate, pieceOnDest));
                         }
                     }
                     //edge cases
@@ -62,7 +62,7 @@ public class Pawn extends Piece {
                             if(board.getTile(destCoordinate).isTileOccupied()) {
                                 final Piece pieceOnDest = board.getTile(destCoordinate).getPiece();
                                 if(this.pieceAlliance != pieceOnDest.getPieceAlliance()) {
-                                    legalMoves.add(new Move.MajorMove(board, this, destCoordinate));
+                                    legalMoves.add(new Move.PawnAttackMove(board, this, destCoordinate, pieceOnDest));
                                 }
                             }
                 }
