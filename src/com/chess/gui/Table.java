@@ -28,6 +28,7 @@ public class Table {
     private Board chessBoard;
 
     private BoardDirection boardDirection;
+    private boolean highlightLegalMoves;
 
     private Tile sourceTile;
     private Tile destinationTile;
@@ -53,6 +54,7 @@ public class Table {
         this.boardPanel = new BoardPanel();
         this.gameFrame.add(this.boardPanel, BorderLayout.CENTER);
         this.boardDirection = BoardDirection.NORMAL;
+        this.highlightLegalMoves = false;
 
         this.gameFrame.setVisible(true);
     }
@@ -119,15 +121,21 @@ public class Table {
             setPreferredSize(TILE_PANEL_DIMENSION);
             assignTileColor();
             assignTilePieceIcon(chessBoard);
-
+            highlightLegalMoves(chessBoard);
             addMouseListener(new MouseListener() {
                 @Override
-                public void mouseClicked(final MouseEvent e) {
-                    if(isRightMouseButton(e)) {
+                public void mouseClicked(final MouseEvent event) {
+
+                    if(Table.get().getGameSetup().isAIPlayer(Table.get().getGameBoard().currentPlayer()) ||
+                            BoardUtils.isEndGame(Table.get().getGameBoard())) {
+                        return;
+                    }
+
+                    if (isRightMouseButton(event)) {
                         sourceTile = null;
                         destinationTile = null;
                         humanMovedPiece = null;
-                    } else if (isLeftMouseButton(e)) {
+                    } else if (isLeftMouseButton(event)) {
                         if (sourceTile == null) {
                             sourceTile = chessBoard.getTile(tileId);
                             humanMovedPiece = sourceTile.getPiece();
@@ -136,26 +144,20 @@ public class Table {
                             }
                         } else {
                             destinationTile = chessBoard.getTile(tileId);
-                            final Move move = Move.MoveFactory.createMove(chessBoard,
-                                                                            sourceTile.getTileCoordinate(),
-                                                                            destinationTile.getTileCoordinate());
+                            final Move move = Move.MoveFactory.createMove(chessBoard, sourceTile.getTileCoordinate(),
+                                    destinationTile.getTileCoordinate());
                             final MoveTransition transition = chessBoard.currentPlayer().makeMove(move);
-                            if(transition.getMoveStatus().isDone()) {
-                                chessBoard = transition.getBoard();
-                                //add move to the move log
+                            if (transition.getMoveStatus().isDone()) {
+                                chessBoard = transition.getToBoard();
+                                moveLog.addMove(move);
                             }
                             sourceTile = null;
                             destinationTile = null;
                             humanMovedPiece = null;
                         }
-                        SwingUtilities.invokeLater(new Runnable() {
-                            @Override
-                            public void run() {
-                                boardPanel.drawBoard(chessBoard);
-                            }
-                        });
                     }
                 }
+
 
                 @Override
                 public void mousePressed(final MouseEvent e) {
@@ -181,7 +183,7 @@ public class Table {
         }
 
         private void highlightLegalMoves(final Board board) {
-            if(true) {
+            if(highlightLegalMoves) {
                 for(final Move move : pieceLegalMoves(board)) {
                     if(move.getDestinationCoordinate() == this.tileId) {
                         try {
@@ -251,6 +253,15 @@ public class Table {
             }
         });
         preferencesMenu.add(flipBoardMenuItem);
+        preferencesMenu.addSeparator();
+        final JCheckBoxMenuItem legalMovesHighlighterCheckbox = new JCheckBoxMenuItem("Highlight Legal Moves", false);
+        legalMovesHighlighterCheckbox.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                highlightLegalMoves = legalMovesHighlighterCheckbox.isSelected();
+            }
+        });
+        preferencesMenu.add(legalMovesHighlighterCheckbox);
         return preferencesMenu;
     }
 
@@ -282,4 +293,8 @@ public class Table {
         abstract BoardDirection opposite();
     }
 
+
+    public static Table get() {
+        return INSTANCE;
+    }
 }

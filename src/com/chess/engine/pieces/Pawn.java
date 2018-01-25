@@ -15,7 +15,11 @@ public class Pawn extends Piece {
     private final static int[] CANDIDATE_COORDINATE = {8};
 
     public Pawn(final Alliance pieceAlliance, final int piecePosition) {
-        super(PieceType.PAWN, piecePosition, pieceAlliance);
+        super(PieceType.PAWN, piecePosition, pieceAlliance, true);
+    }
+
+    public Pawn(final Alliance pieceAlliance, final int piecePosition, final boolean isFirstMove) {
+        super(PieceType.PAWN, piecePosition, pieceAlliance, isFirstMove);
     }
 
     @Override
@@ -33,10 +37,10 @@ public class Pawn extends Piece {
                 if(destPos == 8 && board.getTile(destCoordinate).isTileOccupied()) {
                     legalMoves.add(new Move.MajorMove(board, this, destCoordinate));
                 } else if (destPos == 16 && this.isFirstMove() &&
-                        (BoardUtils.SEVENTH_RANK[this.piecePosition] &&
+                        ((BoardUtils.SEVENTH_RANK[this.piecePosition] &&
                                 this.getPieceAlliance().isBlack())
                         || (BoardUtils.SECOND_RANK[this.piecePosition] &&
-                                this.getPieceAlliance().isWhite())) {
+                                this.getPieceAlliance().isWhite()))) {
                     final int behindDestCoordinate = this.piecePosition + (this.pieceAlliance.getDirection() * 8);
                     if (!board.getTile(behindDestCoordinate).isTileOccupied() && (!board.getTile(destCoordinate).isTileOccupied())) {
                         legalMoves.add(new Move.MajorMove(board, this, destCoordinate));
