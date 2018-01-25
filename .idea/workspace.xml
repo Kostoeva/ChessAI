@@ -50,17 +50,34 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TakenPiecesPanel.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="TakenPiecesPanel.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/../Chess/src/com/chess/gui/TakenPiecesPanel.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="415">
-              <caret line="85" column="19" lean-forward="true" selection-start-line="85" selection-start-column="19" selection-end-line="85" selection-end-column="19" />
+            <state relative-caret-position="109">
+              <caret line="67" column="54" lean-forward="false" selection-start-line="67" selection-start-column="39" selection-end-line="67" selection-end-column="54" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#2063#2064#0" expanded="true" />
                 <element signature="e#2154#2155#0" expanded="true" />
                 <element signature="e#2311#2312#0" expanded="true" />
                 <element signature="e#2402#2403#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Piece.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/../Chess/src/com/chess/engine/pieces/Piece.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-75">
+              <caret line="123" column="26" lean-forward="true" selection-start-line="123" selection-start-column="26" selection-end-line="123" selection-end-column="26" />
+              <folding>
+                <element signature="e#1650#1651#0" expanded="true" />
+                <element signature="e#1691#1692#0" expanded="true" />
+                <element signature="e#4016#4017#0" expanded="true" />
+                <element signature="e#4062#4063#0" expanded="true" />
+                <element signature="e#4103#4104#0" expanded="true" />
+                <element signature="e#4156#4157#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -180,7 +197,6 @@
         <option value="$PROJECT_DIR$/../Chess/src/com/chess/engine/player/WhitePlayer.java" />
         <option value="$PROJECT_DIR$/../Chess/src/com/chess/engine/Alliance.java" />
         <option value="$PROJECT_DIR$/../Chess/src/com/chess/engine/player/MoveTransition.java" />
-        <option value="$PROJECT_DIR$/../Chess/src/com/chess/engine/pieces/Piece.java" />
         <option value="$PROJECT_DIR$/../Chess/src/com/chess/engine/pieces/Bishop.java" />
         <option value="$PROJECT_DIR$/../Chess/src/com/chess/engine/pieces/King.java" />
         <option value="$PROJECT_DIR$/../Chess/src/com/chess/engine/pieces/Knight.java" />
@@ -191,6 +207,7 @@
         <option value="$PROJECT_DIR$/../Chess/src/com/chess/engine/board/BoardUtils.java" />
         <option value="$PROJECT_DIR$/../Chess/src/com/chess/gui/Table.java" />
         <option value="$PROJECT_DIR$/../Chess/src/com/chess/gui/TakenPiecesPanel.java" />
+        <option value="$PROJECT_DIR$/../Chess/src/com/chess/engine/pieces/Piece.java" />
       </list>
     </option>
   </component>
@@ -844,17 +861,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../Chess/src/com/chess/engine/pieces/Piece.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="21" column="8" lean-forward="false" selection-start-line="21" selection-start-column="8" selection-end-line="21" selection-end-column="8" />
-          <folding>
-            <element signature="e#1650#1651#0" expanded="true" />
-            <element signature="e#1691#1692#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../Chess/src/com/chess/engine/pieces/Rook.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
@@ -967,14 +973,29 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/../Chess/src/com/chess/gui/TakenPiecesPanel.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="415">
-          <caret line="85" column="19" lean-forward="true" selection-start-line="85" selection-start-column="19" selection-end-line="85" selection-end-column="19" />
+        <state relative-caret-position="109">
+          <caret line="67" column="54" lean-forward="false" selection-start-line="67" selection-start-column="39" selection-end-line="67" selection-end-column="54" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#2063#2064#0" expanded="true" />
             <element signature="e#2154#2155#0" expanded="true" />
             <element signature="e#2311#2312#0" expanded="true" />
             <element signature="e#2402#2403#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../Chess/src/com/chess/engine/pieces/Piece.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-75">
+          <caret line="123" column="26" lean-forward="true" selection-start-line="123" selection-start-column="26" selection-end-line="123" selection-end-column="26" />
+          <folding>
+            <element signature="e#1650#1651#0" expanded="true" />
+            <element signature="e#1691#1692#0" expanded="true" />
+            <element signature="e#4016#4017#0" expanded="true" />
+            <element signature="e#4062#4063#0" expanded="true" />
+            <element signature="e#4103#4104#0" expanded="true" />
+            <element signature="e#4156#4157#0" expanded="true" />
           </folding>
         </state>
       </provider>
