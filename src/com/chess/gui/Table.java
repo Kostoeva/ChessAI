@@ -341,7 +341,11 @@ public class Table {
     }
 
 
-    public static Table get() {
+    public Table get() {
         return INSTANCE;
+    }
+
+    private Board getGameBoard() {
+        return this.chessBoard;
     }
 }
