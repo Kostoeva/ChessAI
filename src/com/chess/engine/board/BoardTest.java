@@ -31,17 +31,17 @@ public class BoardTest {
     @Test
     public void testFoolsMate() {
         final Board board = Board.createStandardBoard();
-        final MoveTransition t1 = board.currentPlayer().makeMove(Move.MoveFactory.createMove(board, BoardUtils.getPositionAtCoordinate('e7'),
+        final MoveTransition t1 = board.currentPlayer().makeMove(Move.MoveFactory.createMove(board, BoardUtils.getCoordinateAtPosition("e7"),
                 BoardUtils.getCoordinateAtPosition("g4")));
 
         assertTrue(t1.getMoveStatus().isDone());
 
-        final MoveTransition t2 = board.currentPlayer().makeMove(Move.MoveFactory.createMove(board, BoardUtils.getPositionAtCoordinate('e7'),
+        final MoveTransition t2 = board.currentPlayer().makeMove(Move.MoveFactory.createMove(board, BoardUtils.getCoordinateAtPosition("e7"),
                 BoardUtils.getCoordinateAtPosition("e5")));
 
         assertTrue(t2.getMoveStatus().isDone());
 
-        final MoveTransition t3 = board.currentPlayer().makeMove(Move.MoveFactory.createMove(board, BoardUtils.getPositionAtCoordinate('e7'),
+        final MoveTransition t3 = board.currentPlayer().makeMove(Move.MoveFactory.createMove(board, BoardUtils.getCoordinateAtPosition("e7"),
                 BoardUtils.getCoordinateAtPosition("g4")));
 
         assertTrue(t3.getMoveStatus().isDone());

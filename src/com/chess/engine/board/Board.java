@@ -22,6 +22,8 @@ public class Board {
 
     private final Pawn enPassantPawn;
 
+    private final Move transitionMove;
+
     private Board(final Builder builder) {
         this.gameBoard = createGameBoard(builder);
         this.whitePieces = calculateActivePieces(this.gameBoard, Alliance.WHITE);
@@ -34,6 +36,8 @@ public class Board {
         this.whitePlayer = new WhitePlayer(this, whiteStandardLegalMoves, blackStandardLegalMoves);
         this.blackPlayer = new BlackPlayer(this, whiteStandardLegalMoves, blackStandardLegalMoves);
         this.currentPlayer = builder.nextMoveMaker.choosePlayer(this.whitePlayer, this.blackPlayer);
+
+        this.transitionMove = builder.transitionMove != null ? builder.transitionMove : Move.MoveFactory.getNullMove();
     }
 
     @Override
@@ -97,6 +101,10 @@ public class Board {
         return this.gameBoard.get(tileCoordinate);
     }
 
+    public Move getTransitionMove() {
+        return this.transitionMove;
+    }
+
     private static List<Tile> createGameBoard(final Builder builder) {
         final Tile[] tiles = new Tile[BoardUtils.NUM_TILES];
         for(int i = 0; i < BoardUtils.NUM_TILES; i++) {
@@ -158,6 +166,7 @@ public class Board {
         Map<Integer, Piece> boardConfig;
         Alliance nextMoveMaker;
         Pawn enPassantPawn;
+        Move transitionMove;
 
         public Builder() {
             this.boardConfig = new HashMap<>();
@@ -175,6 +184,11 @@ public class Board {
 
         public Board build() {
             return new Board(this);
+        }
+
+        public Builder setMoveTransition(final Move transitionMove) {
+            this.transitionMove = transitionMove;
+            return this;
         }
 
         public void setEnPassantPawn(Pawn enPassantPawn) {
